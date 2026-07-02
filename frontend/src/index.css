@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-parchment: #F6EFE3;
+  --color-parchment-deep: #EBE0CF;
+  --color-sage: #E4EDE8;
+  --color-sage-deep: #D0DDD5;
+  --color-cream: #FAF6EF;
+  --color-cream-dark: #EDE5D8;
+  --color-bark: #5C3D2E;
+  --color-bark-light: #7A5540;
+  --color-bead: #C75B2E;
+  --color-bead-light: #E07840;
+  --color-amber: #D4A03A;
+  --color-amber-light: #E8B84D;
+  --color-forest: #1A3C32;
+  --color-forest-mid: #2A5C4A;
+  --color-forest-light: #3D7562;
+  --color-lake: #4A7C6F;
+  --color-charcoal: #1C1916;
+  --color-stone: #5C5650;
+  --color-stone-light: #8A837A;
+  --color-border: #DDD2C4;
+  --color-border-warm: #D4C4B0;
+
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-charcoal font-sans antialiased;
+    margin: 0;
+    background: linear-gradient(165deg, #F6EFE3 0%, #EDE4D4 40%, #E8F0EB 100%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif font-semibold tracking-tight;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-bead) 35%, transparent);
+    color: var(--color-charcoal);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-site {
+    background: linear-gradient(165deg, #F6EFE3 0%, #EDE4D4 45%, #E4EDE8 100%);
+  }
+
+  .bg-section-warm {
+    background: linear-gradient(180deg, #FAF6EF 0%, #F0E6D6 100%);
+  }
+
+  .bg-section-sage {
+    background: linear-gradient(180deg, #EAF2ED 0%, #DCE8E1 100%);
+  }
+
+  .bg-section-forest {
+    background: linear-gradient(135deg, #1A3C32 0%, #2A5C4A 50%, #1A3C32 100%);
+  }
+
+  .bg-section-terracotta {
+    background: linear-gradient(135deg, #C75B2E 0%, #A84825 100%);
+  }
+
+  .card-elevated {
+    background: linear-gradient(145deg, #FFFCF7 0%, #F5EDE2 100%);
+    border: 1px solid var(--color-border-warm);
+    box-shadow:
+      0 4px 6px -1px rgb(92 61 46 / 0.06),
+      0 12px 24px -4px rgb(26 60 50 / 0.08);
+  }
+
+  .card-elevated:hover {
+    box-shadow:
+      0 8px 12px -2px rgb(92 61 46 / 0.1),
+      0 20px 40px -8px rgb(26 60 50 / 0.14);
+    border-color: color-mix(in srgb, var(--color-bead) 40%, var(--color-border-warm));
+  }
+
+  .label-kicker {
+    @apply text-xs uppercase tracking-[0.25em] font-semibold text-bead;
+  }
+
+  .heading-display {
+    @apply font-serif font-bold tracking-tight text-charcoal;
+    text-shadow: 0 1px 0 rgb(255 255 255 / 0.4);
+  }
+
+  .pattern-dots {
+    background-image: radial-gradient(circle, rgb(26 60 50 / 0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.7s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
