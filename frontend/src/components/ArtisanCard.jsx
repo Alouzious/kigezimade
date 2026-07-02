@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { MapPin } from 'lucide-react'
 import { cn } from '../lib/utils'
+import { FALLBACK_ARTISAN } from '../lib/images'
 
 export default function ArtisanCard({ artisan, className }) {
   return (
@@ -13,7 +14,7 @@ export default function ArtisanCard({ artisan, className }) {
     >
       <div className="aspect-[3/4] overflow-hidden">
         <img
-          src={artisan.photo_url || 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=600&q=80'}
+          src={artisan.photo_url || FALLBACK_ARTISAN}
           alt={artisan.name}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
           loading="lazy"

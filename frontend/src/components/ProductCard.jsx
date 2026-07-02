@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { formatPrice } from '../lib/api'
 import { getPrimaryImage, getProductImages } from '../lib/session'
+import { FALLBACK_PRODUCT } from '../lib/images'
 import { VerifiedBadge, AvailabilityBadge } from './ShareButtons'
 import { useI18n } from '../lib/i18n'
 import { cn } from '../lib/utils'
@@ -8,7 +9,7 @@ import { cn } from '../lib/utils'
 export default function ProductCard({ product, className }) {
   const { t } = useI18n()
   const images = getProductImages(product)
-  const cover = getPrimaryImage(product, 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=600&q=80')
+  const cover = getPrimaryImage(product, FALLBACK_PRODUCT)
 
   return (
     <Link

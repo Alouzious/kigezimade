@@ -1,19 +1,13 @@
 import { Link } from 'react-router-dom'
 import { MapPin, ArrowUpRight } from 'lucide-react'
 import { DISTRICTS } from '../lib/api'
+import { craftImg } from '../lib/images'
 
 const districtImages = {
-  Kabale: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=600&q=80',
-  Kisoro: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600&q=80',
-  Kanungu: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80',
-  Rukiga: 'https://images.unsplash.com/photo-1610701596007-7610059003fe?w=600&q=80',
-}
-
-const districtAccents = {
-  Kabale: 'from-lake/90',
-  Kisoro: 'from-forest/90',
-  Kanungu: 'from-bark/90',
-  Rukiga: 'from-bead/90',
+  Kabale: craftImg('baskets', 600),
+  Kisoro: craftImg('figurines', 600),
+  Kanungu: craftImg('textiles', 600),
+  Rukiga: craftImg('beadwork', 600),
 }
 
 export default function DistrictExplore({ onSelect }) {
@@ -34,7 +28,7 @@ export default function DistrictExplore({ onSelect }) {
                 alt={d.label}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className={`absolute inset-0 bg-gradient-to-t ${districtAccents[d.value]} via-charcoal/30 to-transparent`} />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/30 to-transparent" />
               <span className="absolute bottom-4 left-4 right-4 text-cream font-serif text-lg font-bold flex items-center justify-between">
                 <span className="flex items-center gap-1.5">
                   <MapPin size={16} className="text-amber-light" />

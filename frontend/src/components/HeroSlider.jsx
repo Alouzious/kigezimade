@@ -2,24 +2,13 @@ import { useEffect, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import Button from './Button'
 import DisplayHeadline from './DisplayHeadline'
+import { craftImg } from '../lib/images'
 
 const SLIDES = [
-  {
-    image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=1800&q=80',
-    tag: 'Basket weaving',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1610701596007-7610059003fe?w=1800&q=80',
-    tag: 'Beadwork',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1800&q=80',
-    tag: 'Drum making',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1800&q=80',
-    tag: 'Heritage crafts',
-  },
+  { image: craftImg('baskets', 1800), tag: 'Basket weaving' },
+  { image: craftImg('beadwork', 1800), tag: 'Beadwork' },
+  { image: craftImg('figurines', 1800), tag: 'Drum making' },
+  { image: craftImg('bags', 1800), tag: 'Heritage crafts' },
 ]
 
 export default function HeroSlider() {
@@ -36,7 +25,7 @@ export default function HeroSlider() {
     <section className="relative min-h-[min(100svh,900px)] md:min-h-[92vh] flex items-end overflow-hidden">
       {SLIDES.map((slide, i) => (
         <div
-          key={slide.image}
+          key={slide.tag}
           className={`absolute inset-0 transition-opacity duration-[1500ms] ${
             i === active ? 'opacity-100' : 'opacity-0'
           }`}
@@ -51,12 +40,10 @@ export default function HeroSlider() {
         </div>
       ))}
 
-      {/* Stronger bottom gradient on mobile for readable text */}
       <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/80 to-forest/30 md:via-forest/55 md:to-forest/25" />
       <div className="absolute inset-0 bg-gradient-to-r from-forest/80 via-forest/30 to-transparent md:from-forest/70 md:via-forest/20" />
       <div className="absolute bottom-0 left-0 right-0 h-40 md:h-32 bg-gradient-to-t from-parchment/30 to-transparent" />
 
-      {/* Stats — desktop only */}
       <div className="absolute top-28 right-6 md:right-12 hidden lg:flex flex-col gap-3 animate-fade-in">
         <div className="px-5 py-3 bg-cream/15 backdrop-blur-md border border-cream/25 rounded-2xl text-cream shadow-xl">
           <p className="text-2xl font-serif font-bold">50+</p>
@@ -68,7 +55,6 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* Side slide nav — tablet+ only */}
       <div className="absolute top-1/2 -translate-y-1/2 right-6 md:right-12 hidden md:flex flex-col gap-2">
         {SLIDES.map((slide, i) => (
           <button
@@ -116,7 +102,6 @@ export default function HeroSlider() {
           </Button>
         </div>
 
-        {/* Mobile slide dots + craft label */}
         <div className="flex items-center justify-between gap-4 mt-6 md:mt-8">
           <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-cream/60 font-semibold">
             Kabale · Kisoro · Kanungu · Rukiga

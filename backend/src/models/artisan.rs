@@ -3,12 +3,12 @@ use serde::{Deserialize, Serialize};
 use sqlx::FromRow;
 use uuid::Uuid;
 
-#[derive(Debug, Clone, Serialize, FromRow)]
+#[derive(Debug, Clone, Serialize, Deserialize, FromRow)]
 pub struct Artisan {
     pub id: Uuid,
     pub name: String,
     pub email: Option<String>,
-    #[serde(skip_serializing)]
+    #[serde(skip_serializing, default)]
     pub password_hash: String,
     pub phone: String,
     pub bio: String,

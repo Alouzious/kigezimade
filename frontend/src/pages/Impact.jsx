@@ -15,6 +15,7 @@ import {
 import Button from '../components/Button'
 import DisplayHeadline from '../components/DisplayHeadline'
 import { Seo } from '../components/HowToBuy'
+import { craftImg } from '../lib/images'
 
 const coreValues = [
   {
@@ -88,7 +89,7 @@ export default function Impact() {
       {/* Hero — same headline style as home */}
       <section className="relative min-h-[min(70svh,640px)] md:min-h-[75vh] flex items-end overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=1600&q=80"
+          src={craftImg('market', 1600)}
           alt="Artisan weaving in Kigezi"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

@@ -8,6 +8,7 @@ use rust_decimal::Decimal;
 use sqlx::PgPool;
 use uuid::Uuid;
 
+use crate::cache;
 use crate::error::{AppError, AppResult};
 use crate::images::{fetch_product_images, replace_product_images};
 use crate::middleware::verify_artisan_token;
@@ -145,6 +146,10 @@ async fn list_products(
     State(pool): State<PgPool>,
     Path(artisan_id): Path<Uuid>,
 ) -> AppResult<Json<Vec<serde_json::Value>>> {
+    if let Some(hit) = cache::cache().artisan_products(artisan_id).await {
+        return Ok(Json(hit));
+    }
+
     let _ = sqlx::query_as::<_, Artisan>("SELECT * FROM artisans WHERE id = $1")
         .bind(artisan_id)
         .fetch_optional(&pool)
@@ -175,6 +180,10 @@ async fn list_products(
             "images": images,
         }));
     }
+
+    cache::cache()
+        .set_artisan_products(artisan_id, results.clone())
+        .await;
 
     Ok(Json(results))
 }
@@ -259,6 +268,8 @@ async fn create_product(
         replace_product_images(&pool, product.id, &image_urls).await?
     };
 
+    cache::cache().invalidate_products();
+
     Ok(Json(serde_json::json!({
         "id": product.id,
         "artisan_id": product.artisan_id,
@@ -328,6 +339,8 @@ async fn update_product(
         fetch_product_images(&pool, product.id).await?
     };
 
+    cache::cache().invalidate_products();
+
     Ok(Json(serde_json::json!({
         "id": product.id,
         "artisan_id": product.artisan_id,
@@ -353,6 +366,8 @@ async fn delete_product(
         .bind(product_id)
         .execute(&pool)
         .await?;
+
+    cache::cache().invalidate_products();
 
     Ok(Json(serde_json::json!({ "deleted": true })))
 }
@@ -390,6 +405,8 @@ async fn duplicate_product(
     } else {
         replace_product_images(&pool, product.id, &image_urls).await?
     };
+
+    cache::cache().invalidate_products();
 
     Ok(Json(serde_json::json!({
         "id": product.id,

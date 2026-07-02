@@ -1,5 +1,6 @@
 mod ai;
 mod auth;
+mod cache;
 mod db;
 mod email;
 mod error;
@@ -50,6 +51,8 @@ async fn main() {
     run_migrations(&pool)
         .await
         .expect("failed to run migrations");
+
+    let _ = cache::cache();
 
     let groq = Arc::new(GroqClient::new(groq_api_key));
     let ai_state = AiState { groq };

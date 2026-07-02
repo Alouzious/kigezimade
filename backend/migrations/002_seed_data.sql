@@ -6,7 +6,7 @@ VALUES
     'Grace learned basket weaving from her grandmother in the hills above Lake Bunyonyi. For twenty years she has taught young women in Kabale how to turn local grasses into income — and pride.',
     'Kabale',
     'Basket weaving',
-    'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=800&q=80',
+    'https://media.istockphoto.com/id/172134865/photo/a-series-of-hand-woven-african-sea-grass-baskets.webp?a=1&b=1&s=612x612&w=0&k=20&c=AfG7uah7eIRGox9edVaSqHT6TXykgod14-zRZYcES3Q=',
     'https://www.youtube.com/embed/dQw4w9WgXcQ',
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.75!2d29.985!3d-1.248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTQnNTIuOCJTIDI5wrA1OScwNi4wIkU!5e0!3m2!1sen!2sug!4v1',
     -1.248,
@@ -18,7 +18,7 @@ VALUES
     'A third-generation drum maker from Kisoro, Emmanuel carves ceremonial drums from mvule wood. His workshop sits at the foot of the Virunga volcanoes.',
     'Kisoro',
     'Drum making',
-    'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80',
+    'https://images.unsplash.com/photo-1641582163466-e4d573078f98?w=800&auto=format&fit=crop&q=80',
     'https://www.youtube.com/embed/dQw4w9WgXcQ',
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.75!2d29.685!3d-1.285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTcnMDYuMCJTIDI5wrA0MScwNi4wIkU!5e0!3m2!1sen!2sug!4v1',
     -1.285,
@@ -30,7 +30,7 @@ VALUES
     'Sarah''s beadwork tells stories of Bakiga heritage — each color and pattern carries meaning passed down through generations of women in Rukiga.',
     'Rukiga',
     'Beadwork',
-    'https://images.unsplash.com/photo-1610701596007-7610059003fe?w=800&q=80',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZVBF365i0OOd15XPtt7rQ76WeP3Gf3tiwW-BlyAj-kA&s',
     'https://www.youtube.com/embed/dQw4w9WgXcQ',
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.75!2d30.015!3d-1.015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMDAnNTQuMCJTIDMwcDAwJzU0LjAiRQ!5e0!3m2!1sen!2sug!4v1',
     -1.015,
@@ -46,7 +46,7 @@ VALUES
     'Hand-woven from local papyrus and banana fibre. Used traditionally for storing grain and gifts at weddings.',
     45000.00,
     'baskets',
-    'https://images.unsplash.com/photo-1610701596007-7610059003fe?w=800&q=80'
+    'https://media.istockphoto.com/id/172134865/photo/a-series-of-hand-woven-african-sea-grass-baskets.webp?a=1&b=1&s=612x612&w=0&k=20&c=AfG7uah7eIRGox9edVaSqHT6TXykgod14-zRZYcES3Q='
 ),
 (
     'b1000000-0000-4000-8000-000000000002',
@@ -55,7 +55,7 @@ VALUES
     'A ceremonial basket with intricate geometric patterns, gifted to brides in Bakiga tradition.',
     65000.00,
     'baskets',
-    'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=800&q=80'
+    'https://images.unsplash.com/photo-1692689383138-c2df3476072c?w=800&auto=format&fit=crop&q=80'
 ),
 (
     'b1000000-0000-4000-8000-000000000003',
@@ -64,7 +64,7 @@ VALUES
     'Carved from mvule wood with cowhide head. Used in community celebrations and storytelling gatherings.',
     280000.00,
     'drums',
-    'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80'
+    'https://images.unsplash.com/photo-1641582163466-e4d573078f98?w=800&auto=format&fit=crop&q=80'
 ),
 (
     'b1000000-0000-4000-8000-000000000004',
@@ -73,7 +73,7 @@ VALUES
     'Glass and clay beads arranged in traditional Bakiga patterns. Each necklace takes three days to complete.',
     35000.00,
     'beadwork',
-    'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80'
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZVBF365i0OOd15XPtt7rQ76WeP3Gf3tiwW-BlyAj-kA&s'
 ),
 (
     'b1000000-0000-4000-8000-000000000005',
@@ -82,7 +82,7 @@ VALUES
     'Worn during traditional dances and festivals. Red and orange beads symbolize vitality and community.',
     42000.00,
     'beadwork',
-    'https://images.unsplash.com/photo-1601121141461-9d61f0208e9d?w=800&q=80'
+    'https://images.unsplash.com/photo-1776841115715-0dd95378b89c?w=800&auto=format&fit=crop&q=80'
 );
 
 INSERT INTO product_stories (product_id, story_text)

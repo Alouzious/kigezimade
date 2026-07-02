@@ -17,19 +17,19 @@ WHERE p.image_url != ''
   );
 
 INSERT INTO product_images (product_id, image_url, sort_order)
-SELECT 'b1000000-0000-4000-8000-000000000001', 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=800&q=80', 1
+SELECT 'b1000000-0000-4000-8000-000000000001', 'https://images.unsplash.com/photo-1630939516949-9e928211efa8?w=800&auto=format&fit=crop&q=80', 1
 WHERE NOT EXISTS (
     SELECT 1 FROM product_images WHERE product_id = 'b1000000-0000-4000-8000-000000000001' AND sort_order = 1
 );
 
 INSERT INTO product_images (product_id, image_url, sort_order)
-SELECT 'b1000000-0000-4000-8000-000000000001', 'https://images.unsplash.com/photo-1610701596007-7610059003fe?w=800&q=80', 2
+SELECT 'b1000000-0000-4000-8000-000000000001', 'https://plus.unsplash.com/premium_photo-1765575812975-3e0190d674ae?w=800&auto=format&fit=crop&q=80', 2
 WHERE NOT EXISTS (
     SELECT 1 FROM product_images WHERE product_id = 'b1000000-0000-4000-8000-000000000001' AND sort_order = 2
 );
 
 INSERT INTO product_images (product_id, image_url, sort_order)
-SELECT 'b1000000-0000-4000-8000-000000000004', 'https://images.unsplash.com/photo-1601121141461-9d61f0208e9d?w=800&q=80', 1
+SELECT 'b1000000-0000-4000-8000-000000000004', 'https://images.unsplash.com/photo-1776841115715-0dd95378b89c?w=800&auto=format&fit=crop&q=80', 1
 WHERE NOT EXISTS (
     SELECT 1 FROM product_images WHERE product_id = 'b1000000-0000-4000-8000-000000000004' AND sort_order = 1
 );

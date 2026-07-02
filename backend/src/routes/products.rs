@@ -6,6 +6,7 @@ use axum::{
 use sqlx::PgPool;
 use uuid::Uuid;
 
+use crate::cache;
 use crate::error::{AppError, AppResult};
 use crate::images::{fetch_product_images, replace_product_images};
 use crate::models::artisan::Artisan;
@@ -64,10 +65,35 @@ fn collect_update_image_urls(body: &UpdateProduct) -> Option<Vec<String>> {
     body.image_url.as_ref().map(|url| vec![url.trim().to_string()])
 }
 
+fn products_filter_key(filters: &ProductFilters) -> String {
+    format!(
+        "c={}|d={}|s={}",
+        filters.category.as_deref().unwrap_or(""),
+        filters.district.as_deref().unwrap_or(""),
+        filters.search.as_deref().map(str::trim).unwrap_or(""),
+    )
+}
+
 async fn list_products(
     State(pool): State<PgPool>,
     Query(filters): Query<ProductFilters>,
 ) -> AppResult<Json<Vec<serde_json::Value>>> {
+    let cache_key = products_filter_key(&filters);
+    if let Some(hit) = cache::cache().products_list(&cache_key).await {
+        return Ok(Json(hit));
+    }
+
+    let results = fetch_products_list(&pool, &filters).await?;
+    cache::cache()
+        .set_products_list(cache_key, results.clone())
+        .await;
+    Ok(Json(results))
+}
+
+async fn fetch_products_list(
+    pool: &PgPool,
+    filters: &ProductFilters,
+) -> AppResult<Vec<serde_json::Value>> {
     let mut query = String::from(
         r#"
         SELECT p.id, p.artisan_id, p.name, p.description, p.price, p.category, p.image_url,
@@ -115,7 +141,7 @@ async fn list_products(
         q = q.bind(b);
     }
 
-    let rows = q.fetch_all(&pool).await?;
+    let rows = q.fetch_all(pool).await?;
 
     let mut results = Vec::new();
     for r in rows {
@@ -123,7 +149,7 @@ async fn list_products(
         let artisan_district = r.artisan_district.clone();
         let artisan_verified = r.artisan_verified;
         let product = r.into_product();
-        let images = fetch_product_images(&pool, product.id).await?;
+        let images = fetch_product_images(pool, product.id).await?;
         let item = ProductWithArtisan {
             product,
             artisan_name,
@@ -147,7 +173,7 @@ async fn list_products(
         }));
     }
 
-    Ok(Json(results))
+    Ok(results)
 }
 
 #[derive(sqlx::FromRow)]
@@ -188,6 +214,17 @@ async fn get_product(
     State(pool): State<PgPool>,
     Path(id): Path<Uuid>,
 ) -> AppResult<Json<serde_json::Value>> {
+    if let Some(hit) = cache::cache().product_detail(id).await {
+        let pool = pool.clone();
+        tokio::spawn(async move {
+            let _ = sqlx::query("UPDATE products SET view_count = view_count + 1 WHERE id = $1")
+                .bind(id)
+                .execute(&pool)
+                .await;
+        });
+        return Ok(Json(hit));
+    }
+
     let product = sqlx::query_as::<_, Product>("SELECT * FROM products WHERE id = $1")
         .bind(id)
         .fetch_optional(&pool)
@@ -211,7 +248,10 @@ async fn get_product(
         images,
     };
 
-    Ok(Json(serde_json::to_value(detail).unwrap()))
+    let value = serde_json::to_value(&detail).unwrap();
+    cache::cache().set_product_detail(id, value.clone()).await;
+
+    Ok(Json(value))
 }
 
 async fn create_product(
@@ -261,6 +301,8 @@ async fn create_product(
     } else {
         replace_product_images(&pool, product.id, &image_urls).await?
     };
+
+    cache::cache().invalidate_products();
 
     Ok(Json(serde_json::json!({
         "id": product.id,
@@ -328,6 +370,8 @@ async fn update_product(
         fetch_product_images(&pool, product.id).await?
     };
 
+    cache::cache().invalidate_products();
+
     Ok(Json(serde_json::json!({
         "id": product.id,
         "artisan_id": product.artisan_id,
@@ -353,6 +397,8 @@ async fn delete_product(
     if result.rows_affected() == 0 {
         return Err(AppError::NotFound("product not found".into()));
     }
+
+    cache::cache().invalidate_products();
 
     Ok(Json(serde_json::json!({ "deleted": true })))
 }

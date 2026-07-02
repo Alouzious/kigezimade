@@ -1,4 +1,32 @@
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+const CACHE_TTL_MS = 2 * 60 * 1000
+const readCache = new Map()
+
+function cacheKey(path) {
+  return path
+}
+
+function getCached(path) {
+  const hit = readCache.get(cacheKey(path))
+  if (hit && Date.now() - hit.t < CACHE_TTL_MS) return hit.data
+  return null
+}
+
+function setCached(path, data) {
+  readCache.set(cacheKey(path), { data, t: Date.now() })
+}
+
+export function clearApiCache() {
+  readCache.clear()
+}
+
+async function cachedGet(path) {
+  const hit = getCached(path)
+  if (hit !== null) return hit
+  const data = await request(path)
+  setCached(path, data)
+  return data
+}
 
 async function request(path, options = {}) {
   const session = (() => {
@@ -26,14 +54,18 @@ async function request(path, options = {}) {
     throw new Error(err.error || 'Request failed')
   }
 
-  return res.json()
+  const data = await res.json()
+  if (options.method && options.method !== 'GET') {
+    clearApiCache()
+  }
+  return data
 }
 
 export const api = {
-  getArtisans: () => request('/api/artisans'),
-  getFeaturedArtisans: () => request('/api/artisans/featured'),
-  getArtisan: (id) => request(`/api/artisans/${id}`),
-  getArtisanProducts: (id) => request(`/api/artisans/${id}/products`),
+  getArtisans: () => cachedGet('/api/artisans'),
+  getFeaturedArtisans: () => cachedGet('/api/artisans/featured'),
+  getArtisan: (id) => cachedGet(`/api/artisans/${id}`),
+  getArtisanProducts: (id) => cachedGet(`/api/artisans/${id}/products`),
   createArtisan: (data) =>
     request('/api/artisans', { method: 'POST', body: JSON.stringify(data) }),
 
@@ -96,9 +128,9 @@ export const api = {
     if (params.district) query.set('district', params.district)
     if (params.search) query.set('search', params.search)
     const qs = query.toString()
-    return request(`/api/products${qs ? `?${qs}` : ''}`)
+    return cachedGet(`/api/products${qs ? `?${qs}` : ''}`)
   },
-  getProduct: (id) => request(`/api/products/${id}`),
+  getProduct: (id) => cachedGet(`/api/products/${id}`),
   createProduct: (data) =>
     request('/api/products', { method: 'POST', body: JSON.stringify(data) }),
   updateProduct: (id, data) =>

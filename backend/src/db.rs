@@ -18,6 +18,7 @@ pub async fn run_migrations(pool: &PgPool) -> Result<(), sqlx::Error> {
         include_str!("../migrations/004_artisan_auth.sql"),
         include_str!("../migrations/005_orders_enhanced.sql"),
         include_str!("../migrations/006_enhancements.sql"),
+        include_str!("../migrations/007_fix_image_urls.sql"),
     ];
 
     for sql in migration_sql {

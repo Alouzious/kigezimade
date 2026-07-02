@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
 import { Map, Clock } from 'lucide-react'
 import Button from '../components/Button'
 import { Seo } from '../components/HowToBuy'
+import { craftImg } from '../lib/images'
 
 const trails = [
   {
@@ -9,7 +9,7 @@ const trails = [
     district: 'Kabale',
     duration: 'Half day',
     description: 'Visit basket weavers above Lake Bunyonyi. Watch papyrus harvesting, try weaving, buy directly from Grace and her cooperative.',
-    image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=800&q=80',
+    image: craftImg('baskets', 800),
     highlights: ['Basket weaving', 'Lake views', 'Women\'s cooperative'],
   },
   {
@@ -17,7 +17,7 @@ const trails = [
     district: 'Kisoro',
     duration: 'Full day',
     description: 'Meet drum makers at the foothills of the Virunga volcanoes. Hear ceremonial drums and learn mvule wood carving.',
-    image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80',
+    image: craftImg('figurines', 800),
     highlights: ['Drum making', 'Volcano views', 'Live demonstration'],
   },
   {
@@ -25,7 +25,7 @@ const trails = [
     district: 'Rukiga',
     duration: '3 hours',
     description: 'Walk through Rukiga hills visiting beadwork artisans. Each necklace tells a story of Bakiga heritage.',
-    image: 'https://images.unsplash.com/photo-1610701596007-7610059003fe?w=800&q=80',
+    image: craftImg('beadwork', 800),
     highlights: ['Beadwork', 'Cultural stories', 'Hill village'],
   },
 ]
