@@ -2,6 +2,11 @@
 name = "kigezimade-backend"
 version = "0.1.0"
 edition = "2021"
+autobins = false
+
+[[bin]]
+name = "backend"
+path = "src/main.rs"
 
 [dependencies]
 axum = { version = "0.8", features = ["macros"] }

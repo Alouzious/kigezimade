@@ -99,6 +99,11 @@
     text-shadow: 0 1px 0 rgb(255 255 255 / 0.4);
   }
 
+  .text-hero-primary {
+    color: #fff9f2;
+    text-shadow: 0 2px 20px rgb(0 0 0 / 0.35);
+  }
+
   .pattern-dots {
     background-image: radial-gradient(circle, rgb(26 60 50 / 0.06) 1px, transparent 1px);
     background-size: 20px 20px;

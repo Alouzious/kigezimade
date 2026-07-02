@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: kigezimade-api
+    runtime: rust
+    rootDir: backend
+    buildCommand: cargo build --release
+    startCommand: ./target/release/backend
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+      - key: RUST_LOG
+        value: info

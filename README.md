@@ -75,9 +75,32 @@ Site runs at `http://localhost:5173`.
 
 ## Deployment
 
-- **Frontend:** Vercel — set `VITE_API_URL` to your Render backend URL
-- **Backend:** Render — set `DATABASE_URL`, `GROQ_API_KEY`, `CORS_ORIGIN` (your Vercel URL)
-- **Database:** Neon — use the pooled connection string in `DATABASE_URL`
+### Backend (Render)
+
+1. Create a **Web Service** on [Render](https://render.com), connect this repo.
+2. Set **Root Directory** to `backend`.
+3. **Build command:** `cargo build --release`
+4. **Start command:** `./target/release/backend`
+5. Add environment variables:
+
+| Variable       | Example / notes                                      |
+|----------------|------------------------------------------------------|
+| `DATABASE_URL` | Neon pooled PostgreSQL URL (`?sslmode=require`)      |
+| `GROQ_API_KEY` | From [console.groq.com](https://console.groq.com)    |
+| `JWT_SECRET`   | Long random string                                   |
+| `FRONTEND_URL` | Your Vercel URL (for password reset links)           |
+| `CORS_ORIGIN`  | Same as frontend URL (no trailing slash)             |
+| `PORT`         | Set automatically by Render — do not override        |
+
+Health check: `GET /health` should return `ok`.
+
+### Frontend (Vercel)
+
+Set `VITE_API_URL` to your Render URL, e.g. `https://kigezimade.onrender.com`
+
+### Database (Neon)
+
+Use the **pooled** connection string in `DATABASE_URL`.
 
 ## Project structure
 

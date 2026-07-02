@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import Button from './Button'
+import DisplayHeadline from './DisplayHeadline'
 
 const SLIDES = [
   {
@@ -92,11 +93,10 @@ export default function HeroSlider() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pb-8 pt-28 sm:pt-32 md:pb-28 md:pt-0 w-full">
-        <h1 className="heading-display text-[2rem] leading-[1.08] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-cream max-w-4xl text-balance drop-shadow-lg">
-          Crafts with stories.
-          <br />
-          <span className="italic text-amber-light">Artisans with names.</span>
-        </h1>
+        <DisplayHeadline
+          line1="Crafts with stories."
+          line2="Artisans with names."
+        />
         <p className="text-cream/90 text-base sm:text-lg md:text-xl max-w-xl mt-4 sm:mt-6 leading-relaxed font-medium">
           Buy directly from makers in Southwest Uganda. Fair prices, living traditions, real connections.
         </p>
