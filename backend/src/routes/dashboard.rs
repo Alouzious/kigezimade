@@ -212,10 +212,9 @@ async fn create_product(
     State(pool): State<PgPool>,
     headers: HeaderMap,
     Path(artisan_id): Path<Uuid>,
-    Json(mut body): Json<CreateProduct>,
+    Json(body): Json<CreateProduct>,
 ) -> AppResult<Json<serde_json::Value>> {
     verify_artisan_token(&headers, artisan_id)?;
-    body.artisan_id = artisan_id;
     if body.name.trim().is_empty() {
         return Err(AppError::BadRequest("name is required".into()));
     }

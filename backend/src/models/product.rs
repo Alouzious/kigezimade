@@ -46,7 +46,7 @@ pub struct ProductWithImages {
 
 #[derive(Debug, Deserialize)]
 pub struct CreateProduct {
-    pub artisan_id: Uuid,
+    pub artisan_id: Option<Uuid>,
     pub name: String,
     pub description: Option<String>,
     pub price: Decimal,

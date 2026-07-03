@@ -262,9 +262,13 @@ async fn create_product(
         return Err(AppError::BadRequest("name is required".into()));
     }
 
+    let artisan_id = body
+        .artisan_id
+        .ok_or_else(|| AppError::BadRequest("artisan_id is required".into()))?;
+
     let artisan_exists: bool =
         sqlx::query_scalar("SELECT EXISTS(SELECT 1 FROM artisans WHERE id = $1)")
-            .bind(body.artisan_id)
+            .bind(artisan_id)
             .fetch_one(&pool)
             .await?;
 
@@ -286,7 +290,7 @@ async fn create_product(
         RETURNING *
         "#,
     )
-    .bind(body.artisan_id)
+    .bind(artisan_id)
     .bind(body.name.trim())
     .bind(body.description.unwrap_or_default())
     .bind(body.price)
