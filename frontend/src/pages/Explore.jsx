@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Play, ArrowLeft, MapPin } from 'lucide-react'
 import Button from '../components/Button'
 import { Seo } from '../components/HowToBuy'
-import { cn } from '../lib/utils'
 
 /** Replace these after your YouTube uploads are ready */
 const KISORO_VIDEO_ID = 'SFNU1Ebf9M8'
@@ -35,7 +34,7 @@ function VideoCard({ journey }) {
 
   return (
     <article className="card-elevated rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-400 group">
-      <div className="relative aspect-video bg-parchment-deep overflow-hidden">
+      <div className="relative w-full min-h-[260px] h-[58vw] max-h-[420px] sm:min-h-[300px] sm:h-auto sm:max-h-none sm:aspect-[16/10] md:aspect-video bg-parchment-deep overflow-hidden">
         {playing ? (
           <iframe
             src={embed}
@@ -61,13 +60,9 @@ function VideoCard({ journey }) {
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-forest/20 to-transparent" />
-            <span
-              className={cn(
-                'absolute inset-0 flex items-center justify-center',
-              )}
-            >
-              <span className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-cream/95 text-forest shadow-xl shadow-forest/30 group-hover:scale-110 group-hover:bg-amber-light transition-all duration-300">
-                <Play size={28} className="ml-1 fill-current" />
+            <span className="absolute inset-0 flex items-center justify-center">
+              <span className="flex items-center justify-center w-[4.5rem] h-[4.5rem] sm:w-20 sm:h-20 rounded-full bg-cream/95 text-forest shadow-xl shadow-forest/30 group-hover:scale-110 group-hover:bg-amber-light transition-all duration-300">
+                <Play size={32} className="ml-1 fill-current sm:w-7 sm:h-7" />
               </span>
             </span>
           </button>
