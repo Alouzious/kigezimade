@@ -6,6 +6,7 @@ import { artisanSession } from '../lib/session'
 import { useI18n } from '../lib/i18n'
 
 const extraLinks = [
+  { to: '/explore', label: 'Explore' },
   { to: '/craft-trails', label: 'Craft Trails' },
   { to: '/impact', label: 'Our Impact' },
   { to: '/track-order', label: 'Track Order' },

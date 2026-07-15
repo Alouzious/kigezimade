@@ -24,6 +24,7 @@ export default function Footer() {
             Explore
           </h4>
           <ul className="space-y-2.5 text-sm text-cream/75">
+            <li><Link to="/explore" className="hover:text-amber-light transition-colors">Explore</Link></li>
             <li><Link to="/marketplace" className="hover:text-amber-light transition-colors">Marketplace</Link></li>
             <li><Link to="/craft-trails" className="hover:text-amber-light transition-colors">Craft Trails</Link></li>
             <li><Link to="/impact" className="hover:text-amber-light transition-colors">Our Impact</Link></li>

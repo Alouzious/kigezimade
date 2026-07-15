@@ -12,6 +12,7 @@ import ResetPassword from './pages/ResetPassword'
 import CraftTrails from './pages/CraftTrails'
 import Impact from './pages/Impact'
 import TrackOrder from './pages/TrackOrder'
+import Explore from './pages/Explore'
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="forgot-password" element={<ForgotPassword />} />
           <Route path="reset-password" element={<ResetPassword />} />
           <Route path="craft-trails" element={<CraftTrails />} />
+          <Route path="explore" element={<Explore />} />
           <Route path="impact" element={<Impact />} />
           <Route path="track-order" element={<TrackOrder />} />
           <Route path="dashboard" element={<ArtisanDashboard />} />
