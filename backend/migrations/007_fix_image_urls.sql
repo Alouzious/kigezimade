@@ -14,16 +14,22 @@ WHERE id = 'a1000000-0000-4000-8000-000000000003';
 UPDATE products SET image_url = 'https://media.istockphoto.com/id/172134865/photo/a-series-of-hand-woven-african-sea-grass-baskets.webp?a=1&b=1&s=612x612&w=0&k=20&c=AfG7uah7eIRGox9edVaSqHT6TXykgod14-zRZYcES3Q='
 WHERE id = 'b1000000-0000-4000-8000-000000000001';
 
-UPDATE products SET image_url = 'https://images.unsplash.com/photo-1692689383138-c2df3476072c?w=800&auto=format&fit=crop&q=80'
+UPDATE products SET image_url = 'https://theugandablog.com/media/blog/art--craft.jpeg'
 WHERE id = 'b1000000-0000-4000-8000-000000000002';
 
-UPDATE products SET image_url = 'https://images.unsplash.com/photo-1641582163466-e4d573078f98?w=800&auto=format&fit=crop&q=80'
+UPDATE products SET image_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ1IBIsb_AZWhRDK07xSj4YF8RFZQbYWxh_GRF8hYMFA&s=10'
 WHERE id = 'b1000000-0000-4000-8000-000000000003';
 
-UPDATE products SET image_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZVBF365i0OOd15XPtt7rQ76WeP3Gf3tiwW-BlyAj-kA&s'
+UPDATE products SET
+  name = 'Heritage Cloth Work',
+  category = 'barkcloth',
+  image_url = 'https://garlandmag.com/wp-content/uploads/2024/05/IMG_9891-2.jpg'
 WHERE id = 'b1000000-0000-4000-8000-000000000004';
 
-UPDATE products SET image_url = 'https://images.unsplash.com/photo-1776841115715-0dd95378b89c?w=800&auto=format&fit=crop&q=80'
+UPDATE products SET
+  name = 'Heritage Geometric Bead Sash',
+  category = 'beadwork',
+  image_url = '/images/rukiga-heritage-beadwork.png'
 WHERE id = 'b1000000-0000-4000-8000-000000000005';
 
 -- Product gallery images

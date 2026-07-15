@@ -136,7 +136,7 @@ export default function ProductDetail() {
 
   const { artisan, images, ...product } = detail
   const productImages = images?.length
-    ? images.map((img) => img.image_url)
+    ? getProductImages({ ...product, images })
     : getProductImages(product)
 
   return (

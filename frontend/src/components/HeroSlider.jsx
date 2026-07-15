@@ -7,7 +7,7 @@ import { craftImg } from '../lib/images'
 const SLIDES = [
   { image: craftImg('baskets', 1800), tag: 'Basket weaving' },
   { image: craftImg('beadwork', 1800), tag: 'Beadwork' },
-  { image: craftImg('figurines', 1800), tag: 'Drum making' },
+  { image: craftImg('drums', 1800), tag: 'Drum making' },
   { image: craftImg('bags', 1800), tag: 'Heritage crafts' },
 ]
 
@@ -104,7 +104,7 @@ export default function HeroSlider() {
 
         <div className="flex items-center justify-between gap-4 mt-6 md:mt-8">
           <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-cream/60 font-semibold">
-            Kabale · Kisoro · Kanungu · Rukiga
+            Kabale · Kisoro · Kanungu · Rukiga · Rubanda
           </p>
           <div className="flex items-center gap-2 md:hidden">
             {SLIDES.map((slide, i) => (

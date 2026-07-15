@@ -14,7 +14,7 @@ export default function Footer() {
           </h3>
           <p className="text-cream/75 text-sm leading-relaxed">
             Connecting artisans, youth, and young women in Kabale, Kisoro, Kanungu,
-            and Rukiga directly with tourists and buyers, preserving craft
+            Rukiga, and Rubanda directly with tourists and buyers, preserving craft
             traditions for the next generation.
           </p>
         </div>

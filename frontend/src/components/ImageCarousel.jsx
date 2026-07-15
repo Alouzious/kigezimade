@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { cn } from '../lib/utils'
+import { resolveMediaUrl } from '../lib/images'
 
 export default function ImageCarousel({
   images = [],
@@ -8,7 +9,7 @@ export default function ImageCarousel({
   className,
   aspect = 'aspect-square',
 }) {
-  const slides = images.filter(Boolean)
+  const slides = images.map(resolveMediaUrl).filter(Boolean)
   const [index, setIndex] = useState(0)
 
   useEffect(() => {

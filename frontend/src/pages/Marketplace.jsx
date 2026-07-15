@@ -47,7 +47,7 @@ export default function Marketplace() {
       <div className="bg-section-forest text-cream py-14 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 pattern-dots opacity-20" />
         <div className="max-w-7xl mx-auto px-6 relative">
-          <Seo title="Marketplace" description="Buy crafts directly from artisans in Kabale, Kisoro, Kanungu, and Rukiga." />
+          <Seo title="Marketplace" description="Buy crafts directly from artisans in Kabale, Kisoro, Kanungu, Rukiga, and Rubanda." />
           <p className="inline-flex items-center gap-2 text-amber-light text-xs uppercase tracking-[0.25em] font-bold mb-4">
             <Sparkles size={14} />
             Marketplace

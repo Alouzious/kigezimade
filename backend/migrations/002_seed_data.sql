@@ -18,7 +18,7 @@ VALUES
     'A third-generation drum maker from Kisoro, Emmanuel carves ceremonial drums from mvule wood. His workshop sits at the foot of the Virunga volcanoes.',
     'Kisoro',
     'Drum making',
-    'https://images.unsplash.com/photo-1641582163466-e4d573078f98?w=800&auto=format&fit=crop&q=80',
+    '/images/drums.jpg',
     'https://www.youtube.com/embed/dQw4w9WgXcQ',
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.75!2d29.685!3d-1.285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTcnMDYuMCJTIDI5wrA0MScwNi4wIkU!5e0!3m2!1sen!2sug!4v1',
     -1.285,
@@ -30,7 +30,7 @@ VALUES
     'Sarah''s beadwork tells stories of Bakiga heritage — each color and pattern carries meaning passed down through generations of women in Rukiga.',
     'Rukiga',
     'Beadwork',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZVBF365i0OOd15XPtt7rQ76WeP3Gf3tiwW-BlyAj-kA&s',
+    '/images/beadwork-rukiga.png',
     'https://www.youtube.com/embed/dQw4w9WgXcQ',
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.75!2d30.015!3d-1.015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMDAnNTQuMCJTIDMwcDAwJzU0LjAiRQ!5e0!3m2!1sen!2sug!4v1',
     -1.015,
@@ -52,10 +52,10 @@ VALUES
     'b1000000-0000-4000-8000-000000000002',
     'a1000000-0000-4000-8000-000000000001',
     'Wedding Gift Basket',
-    'A ceremonial basket with intricate geometric patterns, gifted to brides in Bakiga tradition.',
+    'A ceremonial basket with intricate geometric patterns, gifted to brides in Bakiga tradition. Handwoven in Kabale from local fibres — a wedding gift that carries home, heritage, and care.',
     65000.00,
     'baskets',
-    'https://images.unsplash.com/photo-1692689383138-c2df3476072c?w=800&auto=format&fit=crop&q=80'
+    'https://theugandablog.com/media/blog/art--craft.jpeg'
 ),
 (
     'b1000000-0000-4000-8000-000000000003',
@@ -64,25 +64,25 @@ VALUES
     'Carved from mvule wood with cowhide head. Used in community celebrations and storytelling gatherings.',
     280000.00,
     'drums',
-    'https://images.unsplash.com/photo-1641582163466-e4d573078f98?w=800&auto=format&fit=crop&q=80'
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ1IBIsb_AZWhRDK07xSj4YF8RFZQbYWxh_GRF8hYMFA&s=10'
 ),
 (
     'b1000000-0000-4000-8000-000000000004',
     'a1000000-0000-4000-8000-000000000003',
-    'Heritage Bead Necklace',
-    'Glass and clay beads arranged in traditional Bakiga patterns. Each necklace takes three days to complete.',
+    'Heritage Cloth Work',
+    'Communal cloth-making from Rukiga — women artisans cutting, stitching, and piecing fabric together by hand. A living craft of care, colour, and shared skill passed between makers.',
     35000.00,
-    'beadwork',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZVBF365i0OOd15XPtt7rQ76WeP3Gf3tiwW-BlyAj-kA&s'
+    'barkcloth',
+    'https://garlandmag.com/wp-content/uploads/2024/05/IMG_9891-2.jpg'
 ),
 (
     'b1000000-0000-4000-8000-000000000005',
     'a1000000-0000-4000-8000-000000000003',
-    'Ceremonial Bead Belt',
-    'Worn during traditional dances and festivals. Red and orange beads symbolize vitality and community.',
+    'Heritage Geometric Bead Sash',
+    'A handcrafted geometric bead sash in black, yellow, and red — traditional Rukiga beadwork for ceremony and celebration. Stringed strands and beaded collars like those in Sarah''s workshop carry Bakiga colour, pattern, and pride.',
     42000.00,
     'beadwork',
-    'https://images.unsplash.com/photo-1776841115715-0dd95378b89c?w=800&auto=format&fit=crop&q=80'
+    '/images/rukiga-heritage-beadwork.png'
 );
 
 INSERT INTO product_stories (product_id, story_text)

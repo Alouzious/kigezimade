@@ -178,6 +178,7 @@ export const DISTRICTS = [
   { value: 'Kisoro', label: 'Kisoro' },
   { value: 'Kanungu', label: 'Kanungu' },
   { value: 'Rukiga', label: 'Rukiga' },
+  { value: 'Rubanda', label: 'Rubanda' },
 ]
 
 export const LANGUAGES = [

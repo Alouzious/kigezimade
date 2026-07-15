@@ -1,3 +1,5 @@
+import { resolveMediaUrl } from './images'
+
 const SESSION_KEY = 'kigezimade_artisan_session'
 
 export const artisanSession = {
@@ -41,13 +43,13 @@ export const artisanSession = {
 
 export function getProductImages(product) {
   if (product?.images?.length) {
-    return product.images.map((img) => img.image_url)
+    return product.images.map((img) => resolveMediaUrl(img.image_url)).filter(Boolean)
   }
-  if (product?.image_url) return [product.image_url]
+  if (product?.image_url) return [resolveMediaUrl(product.image_url)]
   return []
 }
 
 export function getPrimaryImage(product, fallback) {
   const images = getProductImages(product)
-  return images[0] || fallback
+  return images[0] || resolveMediaUrl(fallback) || fallback
 }

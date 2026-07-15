@@ -83,7 +83,7 @@ export default function Impact() {
     <div>
       <Seo
         title="Our Impact"
-        description="Mission, vision, and values of Kigezi Made. Supporting artisans in Kabale, Kisoro, Kanungu, and Rukiga."
+        description="Mission, vision, and values of Kigezi Made. Supporting artisans in Kabale, Kisoro, Kanungu, Rukiga, and Rubanda."
       />
 
       {/* Hero — same headline style as home */}
@@ -125,7 +125,7 @@ export default function Impact() {
                 Fair income through direct connection
               </h2>
               <p className="text-stone leading-relaxed text-base md:text-lg">
-                To connect artisans in Kabale, Kisoro, Kanungu, and Rukiga directly with
+                To connect artisans in Kabale, Kisoro, Kanungu, Rukiga, and Rubanda directly with
                 tourists and buyers, so makers earn fairly, tell their own stories, and keep
                 craft traditions alive for the next generation.
               </p>

@@ -4,7 +4,7 @@ import { MapPin, Play, Clock } from 'lucide-react'
 import ProductCard from '../components/ProductCard'
 import ShareButtons, { VerifiedBadge } from '../components/ShareButtons'
 import { Seo } from '../components/HowToBuy'
-import { craftImg } from '../lib/images'
+import { craftImg, resolveMediaUrl } from '../lib/images'
 import { api } from '../lib/api'
 
 export default function ArtisanProfile() {
@@ -48,7 +48,7 @@ export default function ArtisanProfile() {
       {/* Hero */}
       <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
         <img
-          src={artisan.photo_url || craftImg('baskets', 1200)}
+          src={resolveMediaUrl(artisan.photo_url || craftImg('baskets', 1200))}
           alt={artisan.name}
           className="w-full h-full object-cover"
         />

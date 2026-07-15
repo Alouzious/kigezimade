@@ -5,9 +5,10 @@ import { craftImg } from '../lib/images'
 
 const districtImages = {
   Kabale: craftImg('baskets', 600),
-  Kisoro: craftImg('figurines', 600),
-  Kanungu: craftImg('textiles', 600),
+  Kisoro: craftImg('drums', 600),
+  Kanungu: craftImg('bags', 600),
   Rukiga: craftImg('beadwork', 600),
+  Rubanda: craftImg('textiles', 600),
 }
 
 export default function DistrictExplore({ onSelect }) {
@@ -19,7 +20,7 @@ export default function DistrictExplore({ onSelect }) {
     <section>
       <p className="label-kicker mb-3">Explore Kigezi</p>
       <h2 className="heading-display text-2xl md:text-4xl mb-8">Browse by district</h2>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
         {districts.map((d) => {
           const inner = (
             <>

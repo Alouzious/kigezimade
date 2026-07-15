@@ -17,7 +17,7 @@ const trails = [
     district: 'Kisoro',
     duration: 'Full day',
     description: 'Meet drum makers at the foothills of the Virunga volcanoes. Hear ceremonial drums and learn mvule wood carving.',
-    image: craftImg('figurines', 800),
+    image: craftImg('drums', 800),
     highlights: ['Drum making', 'Volcano views', 'Live demonstration'],
   },
   {
@@ -35,7 +35,7 @@ export default function CraftTrails() {
     <div>
       <div className="bg-section-terracotta text-cream py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <Seo title="Craft Trails" description="Curated artisan visits in Kabale, Kisoro, Kanungu, and Rukiga, Southwest Uganda." />
+          <Seo title="Craft Trails" description="Curated artisan visits in Kabale, Kisoro, Kanungu, Rukiga, and Rubanda, Southwest Uganda." />
           <p className="text-xs uppercase tracking-[0.25em] text-cream/80 font-bold mb-3">Plan your visit</p>
           <h1 className="heading-display text-4xl md:text-6xl text-cream max-w-2xl">Craft trails in Kigezi</h1>
           <p className="text-cream/85 mt-4 max-w-2xl leading-relaxed text-lg">
