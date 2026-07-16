@@ -6,7 +6,7 @@ import { Seo } from '../components/HowToBuy'
 
 /** Replace these after your YouTube uploads are ready */
 const KISORO_VIDEO_ID = 'SFNU1Ebf9M8'
-const BUNYONYI_VIDEO_ID = 'SFNU1Ebf9M8'
+const BUNYONYI_VIDEO_ID = 'g5sQ1wuHpZ4'
 
 const journeys = [
   {

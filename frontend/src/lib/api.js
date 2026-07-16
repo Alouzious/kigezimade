@@ -165,6 +165,7 @@ export const CATEGORIES = [
   { value: 'all', label: 'All crafts' },
   { value: 'baskets', label: 'Baskets' },
   { value: 'beadwork', label: 'Beadwork' },
+  { value: 'cowhide', label: 'Cowhide bags' },
   { value: 'drums', label: 'Drums' },
   { value: 'barkcloth', label: 'Barkcloth' },
   { value: 'wooden', label: 'Wooden pieces' },

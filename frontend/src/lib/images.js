@@ -14,6 +14,8 @@ export const CRAFT_IMAGES = {
   fabrics: 'https://plus.unsplash.com/premium_photo-1765575812975-3e0190d674ae',
   fabricsDetail: 'https://images.unsplash.com/photo-1776841115715-0dd95378b89c',
   cloth: 'https://garlandmag.com/wp-content/uploads/2024/05/IMG_9891-2.jpg',
+  cowhide: '/images/cowhide-pouch-alt.jpg',
+  cowhideEarrings: '/images/cowhide-earrings.jpg',
 }
 
 /** Turn app-relative /images/... into a full URL the browser can load. */

@@ -83,6 +83,24 @@ VALUES
     42000.00,
     'beadwork',
     '/images/rukiga-heritage-beadwork.png'
+),
+(
+    'c1000000-0000-4000-8000-000000000001',
+    'a1000000-0000-4000-8000-000000000003',
+    'Highlands Cowhide Cosmetic Pouch',
+    'Genuine cowhide cosmetic pouch with natural brown-and-cream markings, smooth leather trim, and a removable strap. Handcrafted for everyday use — unique hide pattern on every piece.',
+    85000.00,
+    'cowhide',
+    '/images/cowhide-pouch-alt.jpg'
+),
+(
+    'c1000000-0000-4000-8000-000000000002',
+    'a1000000-0000-4000-8000-000000000003',
+    'Cowhide Teardrop Earrings',
+    'Hand-cut cowhide teardrop earrings with natural speckled hide, turquoise bead accents, and antique-finish hooks. Lightweight rustic jewellery from Rukiga.',
+    28000.00,
+    'cowhide',
+    '/images/cowhide-earrings.jpg'
 );
 
 INSERT INTO product_stories (product_id, story_text)
