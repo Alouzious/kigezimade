@@ -63,7 +63,7 @@ export default function ArtisanProfile() {
           </h1>
           <p className="flex items-center gap-2 text-cream/80 mt-3">
             <MapPin size={16} />
-            {artisan.district}, Kigezi Region
+            {artisan.district}, South Western Uganda
           </p>
         </div>
       </section>
@@ -77,7 +77,7 @@ export default function ArtisanProfile() {
               {artisan.bio}
             </p>
             <div className="mt-6">
-              <ShareButtons title={`${artisan.name} on Kigezi Made`} />
+              <ShareButtons title={`${artisan.name} on Oweitu Made`} />
             </div>
           </div>
 

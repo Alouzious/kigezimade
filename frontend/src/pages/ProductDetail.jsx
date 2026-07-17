@@ -189,7 +189,7 @@ export default function ProductDetail() {
             >
               {artisan.name}
             </Link>
-            <p className="text-sm text-stone mt-1">{artisan.district}, Kigezi</p>
+            <p className="text-sm text-stone mt-1">{artisan.district}, South Western Uganda</p>
           </div>
 
           {/* Order form */}
@@ -329,7 +329,7 @@ export default function ProductDetail() {
           <div className="max-w-3xl">
             <p className="text-stone mb-6">
               Discover the cultural meaning behind this craft: how it was made,
-              who made it, and what it represents in Kigezi heritage.
+              who made it, and what it represents in the region's heritage.
             </p>
             <Button
               onClick={handleGenerateStory}

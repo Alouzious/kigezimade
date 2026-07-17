@@ -28,6 +28,14 @@ const trails = [
     image: craftImg('beadwork', 800),
     highlights: ['Beadwork', 'Cultural stories', 'Hill village'],
   },
+  {
+    title: 'Ankole craft & cattle trail',
+    district: 'Mbarara',
+    duration: 'Full day',
+    description: 'Explore woodwork and leatherwork workshops on the edge of Ankole cattle country. See how the region\'s long-horned cattle heritage shapes local craft, from leather goods to carved milk pots.',
+    image: craftImg('woodwork', 800),
+    highlights: ['Woodwork', 'Leatherwork', 'Ankole cattle culture'],
+  },
 ]
 
 export default function CraftTrails() {
@@ -35,12 +43,13 @@ export default function CraftTrails() {
     <div>
       <div className="bg-section-terracotta text-cream py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <Seo title="Craft Trails" description="Curated artisan visits in Kabale, Kisoro, Kanungu, Rukiga, and Rubanda, Southwest Uganda." />
+          <Seo title="Craft Trails" description="Curated artisan visits across South Western Uganda, from Kigezi to Ankole." />
           <p className="text-xs uppercase tracking-[0.25em] text-cream/80 font-bold mb-3">Plan your visit</p>
-          <h1 className="heading-display text-4xl md:text-6xl text-cream max-w-2xl">Craft trails in Kigezi</h1>
+          <h1 className="heading-display text-4xl md:text-6xl text-cream max-w-2xl">Craft trails in South Western Uganda</h1>
           <p className="text-cream/85 mt-4 max-w-2xl leading-relaxed text-lg">
             Curated routes to meet makers in their workshops, not souvenir shops.
-            Combine craft visits with Lake Bunyonyi, Bwindi, and the Virunga foothills.
+            Combine craft visits with Lake Bunyonyi, Bwindi, and the Virunga foothills in Kigezi,
+            or Lake Mburo and Igongo cultural sites in Ankole.
           </p>
         </div>
       </div>

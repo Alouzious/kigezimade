@@ -47,13 +47,13 @@ export default function Marketplace() {
       <div className="bg-section-forest text-cream py-14 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 pattern-dots opacity-20" />
         <div className="max-w-7xl mx-auto px-6 relative">
-          <Seo title="Marketplace" description="Buy crafts directly from artisans in Kabale, Kisoro, Kanungu, Rukiga, and Rubanda." />
+          <Seo title="Marketplace" description="Buy crafts directly from artisans across South Western Uganda, from Kigezi to Ankole." />
           <p className="inline-flex items-center gap-2 text-amber-light text-xs uppercase tracking-[0.25em] font-bold mb-4">
             <Sparkles size={14} />
             Marketplace
           </p>
           <h1 className="heading-display text-4xl md:text-6xl text-cream max-w-2xl">
-            Crafts from Kigezi
+            Crafts from South Western Uganda
           </h1>
           <p className="text-cream/80 mt-4 max-w-2xl leading-relaxed text-lg">
             Buy directly from the maker. Fair prices, real stories, no middlemen.

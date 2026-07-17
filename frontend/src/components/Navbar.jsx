@@ -43,14 +43,14 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-forest to-forest-mid flex items-center justify-center shadow-md shadow-forest/20 group-hover:scale-105 transition-transform">
-            <span className="font-serif text-cream text-base sm:text-lg font-bold">K</span>
+            <span className="font-serif text-cream text-base sm:text-lg font-bold">O</span>
           </div>
           <div className="flex flex-col min-w-0">
             <span className="font-serif text-lg sm:text-xl text-forest tracking-tight font-bold truncate">
-              Kigezi Made
+              Oweitu Made
             </span>
             <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] text-bead font-semibold">
-              Southwest Uganda
+              The Beauty of South West
             </span>
           </div>
         </Link>

@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12 relative">
         <div>
           <h3 className="font-serif text-2xl font-bold mb-4 flex items-center gap-2">
-            Kigezi Made
+            Oweitu Made
             <Heart size={18} className="text-amber-light fill-amber-light/30" />
           </h3>
           <p className="text-cream/75 text-sm leading-relaxed">
@@ -43,13 +43,13 @@ export default function Footer() {
           </p>
           <p className="flex items-center gap-2 text-sm text-cream/75 mt-2">
             <Mail size={14} className="text-amber-light" />
-            hello@kigezimade.ug
+            hello@oweitumade.ug
           </p>
         </div>
       </div>
 
       <div className="border-t border-cream/10 py-6 text-center text-xs text-cream/50 relative">
-        &copy; {new Date().getFullYear()} Kigezi Made. Craft with purpose.
+        &copy; {new Date().getFullYear()} Oweitu Made. Craft with purpose.
       </div>
     </footer>
   )

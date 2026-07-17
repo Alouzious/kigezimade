@@ -374,7 +374,7 @@ export default function ArtisanDashboard() {
               {orders.map((order) => {
                 const wa = whatsappLink(
                   order.buyer_phone,
-                  `Hello ${order.buyer_name}, thank you for ordering ${order.product_name} from Kigezi Made!`,
+                  `Hello ${order.buyer_name}, thank you for ordering ${order.product_name} from Oweitu Made!`,
                 )
                 return (
                   <div key={order.id} className="bg-white border border-border rounded-sm p-5 md:p-6">

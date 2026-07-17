@@ -104,7 +104,7 @@ export default function HeroSlider() {
 
         <div className="flex items-center justify-between gap-4 mt-6 md:mt-8">
           <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-cream/60 font-semibold">
-            Kabale · Kisoro · Kanungu · Rukiga · Rubanda
+            Kabale · Kisoro · Kanungu · Rukiga · Rubanda . Bushenyi . Buhweju . Sheema . Isingiro +more
           </p>
           <div className="flex items-center gap-2 md:hidden">
             {SLIDES.map((slide, i) => (

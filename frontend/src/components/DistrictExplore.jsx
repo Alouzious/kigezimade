@@ -3,12 +3,28 @@ import { MapPin, ArrowUpRight } from 'lucide-react'
 import { DISTRICTS } from '../lib/api'
 import { craftImg } from '../lib/images'
 
+// South Western Uganda = Kigezi sub-region + Ankole sub-region
 const districtImages = {
+  // Kigezi sub-region
   Kabale: craftImg('baskets', 600),
   Kisoro: craftImg('drums', 600),
   Kanungu: craftImg('bags', 600),
   Rukiga: craftImg('beadwork', 600),
   Rubanda: craftImg('textiles', 600),
+  Rukungiri: craftImg('pottery', 600),
+  // Ankole sub-region
+  Mbarara: craftImg('woodwork', 600),
+  Bushenyi: craftImg('mats', 600),
+  Ntungamo: craftImg('baskets', 600),
+  Isingiro: craftImg('beadwork', 600),
+  Kiruhura: craftImg('leatherwork', 600),
+  Ibanda: craftImg('drums', 600),
+  Buhweju: craftImg('textiles', 600),
+  Mitooma: craftImg('bags', 600),
+  Rubirizi: craftImg('pottery', 600),
+  Rwampara: craftImg('woodwork', 600),
+  Sheema: craftImg('mats', 600),
+  Kazo: craftImg('leatherwork', 600),
 }
 
 export default function DistrictExplore({ onSelect }) {
@@ -18,9 +34,9 @@ export default function DistrictExplore({ onSelect }) {
 
   return (
     <section>
-      <p className="label-kicker mb-3">Explore Kigezi</p>
+      <p className="label-kicker mb-3">Explore South Western Uganda</p>
       <h2 className="heading-display text-2xl md:text-4xl mb-8">Browse by district</h2>
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5">
         {districts.map((d) => {
           const inner = (
             <>
