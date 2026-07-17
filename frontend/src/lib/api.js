@@ -168,6 +168,9 @@ export const CATEGORIES = [
   { value: 'cowhide', label: 'Cowhide bags' },
   { value: 'drums', label: 'Drums' },
   { value: 'barkcloth', label: 'Barkcloth' },
+  { value: 'horncraft', label: 'Horn & gourd craft' },
+  { value: 'coffee', label: 'Coffee' },
+  { value: 'produce', label: 'Produce' },
   { value: 'wooden', label: 'Wooden pieces' },
 ]
 
@@ -175,11 +178,26 @@ export const PRODUCT_CATEGORIES = CATEGORIES.filter((c) => c.value !== 'all')
 
 export const DISTRICTS = [
   { value: 'all', label: 'All districts' },
+  // Kigezi sub-region
   { value: 'Kabale', label: 'Kabale' },
-  { value: 'Kisoro', label: 'Kisoro' },
   { value: 'Kanungu', label: 'Kanungu' },
-  { value: 'Rukiga', label: 'Rukiga' },
+  { value: 'Kisoro', label: 'Kisoro' },
   { value: 'Rubanda', label: 'Rubanda' },
+  { value: 'Rukiga', label: 'Rukiga' },
+  { value: 'Rukungiri', label: 'Rukungiri' },
+  // Ankole sub-region
+  { value: 'Buhweju', label: 'Buhweju' },
+  { value: 'Bushenyi', label: 'Bushenyi' },
+  { value: 'Ibanda', label: 'Ibanda' },
+  { value: 'Isingiro', label: 'Isingiro' },
+  { value: 'Kazo', label: 'Kazo' },
+  { value: 'Kiruhura', label: 'Kiruhura' },
+  { value: 'Mbarara', label: 'Mbarara' },
+  { value: 'Mitooma', label: 'Mitooma' },
+  { value: 'Ntungamo', label: 'Ntungamo' },
+  { value: 'Rubirizi', label: 'Rubirizi' },
+  { value: 'Rwampara', label: 'Rwampara' },
+  { value: 'Sheema', label: 'Sheema' },
 ]
 
 export const LANGUAGES = [
