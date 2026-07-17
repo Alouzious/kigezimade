@@ -1,4 +1,3 @@
-/** African craft images — local copies preferred (stable, no broken gstatic thumbs) */
 export const CRAFT_IMAGES = {
   beadwork: '/images/beadwork-rukiga.png',
   drums: '/images/drums.jpg',
@@ -16,6 +15,11 @@ export const CRAFT_IMAGES = {
   cloth: 'https://garlandmag.com/wp-content/uploads/2024/05/IMG_9891-2.jpg',
   cowhide: '/images/cowhide-pouch-alt.jpg',
   cowhideEarrings: '/images/cowhide-earrings.jpg',
+  // Previously missing — were silently falling back to `baskets`
+  pottery: 'https://commons.wikimedia.org/wiki/Special:FilePath/Liberia_-_Pottery_making.jpg',
+  woodwork: 'https://commons.wikimedia.org/wiki/Special:FilePath/African_artisan_carving_wooden_dishes.jpg',
+  mats: 'https://commons.wikimedia.org/wiki/Special:FilePath/An_old_man_weaving_a_local_mat_in_Northern_Ghana.jpg',
+  leatherwork: 'https://commons.wikimedia.org/wiki/Special:FilePath/Leather_working_scouts_01.JPG',
 }
 
 /** Turn app-relative /images/... into a full URL the browser can load. */
@@ -37,7 +41,8 @@ export function craftImg(key, width = 800) {
     base.includes('istockphoto.com') ||
     base.includes('garlandmag.com') ||
     base.includes('theugandablog.com') ||
-    base.includes('njabala.com')
+    base.includes('njabala.com') ||
+    base.includes('wikimedia.org')
   ) {
     return resolved
   }
